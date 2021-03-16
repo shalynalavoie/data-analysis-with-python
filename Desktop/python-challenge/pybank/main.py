@@ -2,7 +2,7 @@
 import os
 import csv
 
-csv_file = os.path.join('..', 'Resources', 'budget_data.csv')
+csv_file = os.path.join('..', 'Pybank', 'Resources', 'budget_data.csv')
 
 exampleFile = open('./Resources/budget_data.csv')
 exampleReader = csv.reader(exampleFile)
@@ -27,3 +27,17 @@ for i in range(len(profit_loss_list)):
         profit_change.append(change)
 
 average_change = sum(profit_change) / len(profit_change)
+
+#greatest increase in profits date/amount over entire period
+greastestinc = profit_loss_list[0]
+greatestdec = profit_loss_list[0]
+
+for i in range(len(profit_loss_list)):
+    if profit_loss_list[i] >= greastestinc:
+        greatestinc = profit_loss_list[i]
+        greatestincmonth = date[i]
+
+#greatest decrease in losses date/amount over entire period
+    elif profit_loss_list[i] <= greatestdec:
+        greatestdec = profit_loss_list[i]
+        greatestdecmonth = date[i]
