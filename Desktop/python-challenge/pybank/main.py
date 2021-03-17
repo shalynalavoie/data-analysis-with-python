@@ -9,13 +9,8 @@ exampleReader = csv.reader(exampleFile)
 exampleData = list(exampleReader)
 
 #total numnber of months
-number_of_months = []
-for row in exampleData[1:]:
-    if row[0] not in number_of_months:
-        number_of_months.append(row[0])
+number_of_months = len(exampleData[1:])
 
-print('The total number of months is: ')
-print(str(len(number_of_months)))
 
 #net total over entire period
 profit_loss_list = [int(row[1]) for row in exampleData[1:]]
@@ -48,8 +43,8 @@ print(f'{greatestdec_month} is the month of the greatest decrease, {greatestdec_
 print(f'{greatestinc_month} is the month of the greatest increase, {greatestinc_amt} is the amount')
 
 print("Financial Analysis")
-print("Total Months = 86")
-print("Net Total= $38382578")
-print("Average Change = $-2315.12")
-print("Greatest Increase in Profits = Feb-2012 ($1926159)")
-print("Great Decrease in Profits = Sep-2013 ($-2196167)")
+print(f"Total Months = {number_of_months}")
+print(f'Net Total = {net_profit}')
+print(f"Average Change = {average_change}")
+print(f"Greatest Increase in Profits = {greatestinc_month} {greatestinc_amt}")
+print(f"Great Decrease in Profits = {greatestdec_month} {greatestdec_amt}")
