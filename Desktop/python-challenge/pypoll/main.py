@@ -16,8 +16,14 @@ print(str(number_of_votes))
 
 
 #complete list of cadidates who received votes
+candidate = str(exampleData[3:])
+list_candidateswithvotes = len(exampleData[3:])
+#print(f"List of Candidates with votes: {candidate}")
 
 #percentage of votes each candidate won
+number_of_votes = [int(row[3] for row in exampleData
+win_percent = (candidate / number_of_votes) * 100
+
 
 #total number of votes each candidate won
 
