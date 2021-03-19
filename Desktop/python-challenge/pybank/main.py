@@ -48,3 +48,15 @@ print(f'Net Total = {net_profit}')
 print(f"Average Change = {average_change}")
 print(f"Greatest Increase in Profits = {greatestinc_month} {greatestinc_amt}")
 print(f"Great Decrease in Profits = {greatestdec_month} {greatestdec_amt}")
+
+#output text file
+
+output_file = os.path.join("pybank_budget_results.txt")
+with open(output_file, "w", newline="") as datafile:
+    datafile.write("Financial Analysis")
+    datafile.write(f"Total Months = {number_of_months}")
+    datafile.write(f'Net Total = {net_profit}')
+    datafile.write(f"Average Change = {average_change}")
+    datafile.write(f"Greatest Increase in Profits = {greatestinc_month} {greatestinc_amt}")
+    datafile.write(f"Great Decrease in Profits = {greatestdec_month} {greatestdec_amt}")
+    datafile.write("End of Report")
