@@ -15,7 +15,7 @@ print('The total number of votes is: ')
 print(str(number_of_votes))
 
 
-#complete list of cadidates who received votes
+#complete list of candidates who received votes
 candidates = []
 
 for row in exampleData:
@@ -31,17 +31,31 @@ candidate_votes = {}
 for candidate in candidates:
     candidate_votes[candidate] = 0
 
-for row in exampleData
+for row in exampleData:
     candidate_votes[row[2]] =+1
-    print(candidate_votes[row2]) 
+    print(candidate_votes[row[2]])
 
 
 #percentage of votes each candidate won
 
-win_percent = (candidate_votes / number_of_votes) * 100
-print(win_percent)
+win_percent = {}
+for candidate in candidate_votes:
+    win_percent[candidate] = (candidate_votes[candidate] / number_of_votes * 100)
 
+for candidate in win_percent:
+    print(f"Candidate {candidate} won {win_percent[candidate]} of the votes.")
 
 
 #winner of election based on popular vote
-winner = 
+winning_votes = {}
+if candidate > candidate:
+    print(f"The winner of the election is {candidate}")
+    
+
+   
+
+
+print("Election Results")
+print(number_of_votes)
+print(win_percent)
+print("The winner of the election is {candidate}")
