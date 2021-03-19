@@ -19,7 +19,7 @@ print(str(number_of_votes))
 candidates = []
 
 for row in exampleData:
-    print(row[2])
+    #print(row[2])
     if row[2] not in candidates:
         candidates.append(row[2:])
 
@@ -52,10 +52,17 @@ if candidate > candidate:
     print(f"The winner of the election is {candidate}")
     
 
-   
-
-
+#Print Results of Election
 print("Election Results")
 print(number_of_votes)
 print(win_percent)
 print("The winner of the election is {candidate}")
+
+#Output text file
+output_file = os.path.join("pypoll_results.txt")
+with open(output_file, "w", newline="") as datafile:
+    datafile.write("Election Results")
+    datafile.write(number_of_votes)
+    datafile.write(win_percent)
+    datafile.write("The winner of the election is {candidate}")
+    datafile.write("End of Report")
