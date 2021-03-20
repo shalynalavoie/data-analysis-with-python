@@ -39,29 +39,32 @@ for row in exampleData[1:]:
 
 win_percent = {}
 for candidate in candidate_votes:
-    win_percent[candidate] = (candidate_votes[candidate] / number_of_votes * 100)
+    win_percent[candidate] = round(candidate_votes[candidate] / number_of_votes * 100)
 
 for candidate in win_percent:
     print(f"Candidate {candidate} won {win_percent[candidate]} of the votes.")
 
 
 #winner of election based on popular vote
-winning_votes = {}
-if candidate > candidate:
-    print(f"The winner of the election is {candidate}")
-    
+most_votes = 0
+winner = ''
+for candidate in candidate_votes:
+    if candidate_votes[candidate] > most_votes:
+        most_votes = candidate_votes[candidate]
+        winner = candidate
+     
 
 #Print Results of Election
 print("Election Results")
 print(number_of_votes)
 print(win_percent)
-print(f"The winner of the election is {candidate}")
+print(f"The winner of the election is {winner}")
 
 #Output text file
 output_file = os.path.join("pypoll_results.txt")
 with open(output_file, "w", newline="") as datafile:
-    datafile.write("Election Results")
-    datafile.write(str(number_of_votes))
-    datafile.write(str(win_percent))
-    datafile.write(f"The winner of the election is {candidate}")
+    datafile.write("Election Results" + "\n")
+    datafile.write(str(number_of_votes) + "\n")
+    datafile.write(str(win_percent) + "\n")
+    datafile.write(f"The winner of the election is {winner} \n")
     datafile.write("End of Report")
