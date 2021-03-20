@@ -1,0 +1,5 @@
+Election Results
+3521001
+{'Khan': 63, 'Correy': 20, 'Li': 14, "O'Tooley": 3}
+The winner of the election is Khan 
+End of Report
